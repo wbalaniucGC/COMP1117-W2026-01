@@ -4,7 +4,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerStats stats;
+    [SerializeField] private float initialSpeed = 5.0f;
+    [SerializeField] private int initialHealth = 100;
+
+
+    private PlayerStats stats;
 
     // Components
     Rigidbody2D rBody;
@@ -16,11 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
 
-
-        
-
-   
-        
+        stats = new PlayerStats(initialSpeed, initialHealth);
     }
 
     void OnMove(InputValue value)
@@ -31,14 +31,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         ApplyMovement();
-        stats = new PlayerStats();
-        stats.MoveSpeed = 100;
         Debug.Log(stats.MoveSpeed);
     }
 
     private void ApplyMovement()
     {
-        float targetVelocityX = moveInput.x;
+        float targetVelocityX = moveInput.x * stats.MoveSpeed;
 
         rBody.linearVelocity = new Vector2(targetVelocityX, rBody.linearVelocity.y);
     }
