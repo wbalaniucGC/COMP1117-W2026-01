@@ -12,6 +12,7 @@ public class Player : Character
     private Rigidbody2D rBody;
     private bool isGrounded;
     private PlayerInputHandler input;
+    private float currentSpeedModifier = 1f;
 
     protected override void Awake()
     {
@@ -35,7 +36,7 @@ public class Player : Character
         anim.SetFloat("yVelocity", rBody.linearVelocity.y);
 
         // Handle sprite flipping
-        if(input.MoveInput.x != 0)
+        if (input.MoveInput.x != 0)
         {
             transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);    // (x, y, z) -- Scale
         }
@@ -54,15 +55,17 @@ public class Player : Character
     {
         // We get the MoveInput from InputHandler
         // We get MoveSpeed from our Parent Class (Character)
-        float horizontalVelocity = input.MoveInput.x * MoveSpeed;
+        float horizontalVelocity = input.MoveInput.x * MoveSpeed * currentSpeedModifier;
 
         rBody.linearVelocity = new Vector2(horizontalVelocity, rBody.linearVelocity.y);
+
+        currentSpeedModifier = 1f;
     }
 
     private void HandleJump()
     {
         // Only jump if I'm on the ground and input.jumpTriggered is set to true
-        if(input.JumpTriggered && isGrounded)
+        if (input.JumpTriggered && isGrounded)
         {
             // Apply the Jump Force
             ApplyJumpForce();
@@ -75,5 +78,10 @@ public class Player : Character
         rBody.linearVelocity = new Vector2(rBody.linearVelocity.x, 0);
 
         rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void ApplySpeedModifier(float speedModifier)
+    {
+        currentSpeedModifier = speedModifier;
     }
 }
