@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class NPCLogic : MonoBehaviour
+public class NPCLogic : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject speechBubble;
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        // Safety check
+        if(speechBubble == null)
+        {
+            return;
+        }
+
+        bool isCurrentlyActive = speechBubble.activeSelf;
+        speechBubble.SetActive(!isCurrentlyActive);
+
+        Debug.Log("NPC: Interaction Toggled");
     }
 }
