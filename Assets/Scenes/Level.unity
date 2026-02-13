@@ -4401,7 +4401,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806203700}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4435,6 +4435,7 @@ MonoBehaviour:
   moveSpeed: 5
   maxHealth: 100
   currentHealth: 0
+  patrolDistance: 5
 --- !u!95 &806203706
 Animator:
   serializedVersion: 7
@@ -4445,7 +4446,7 @@ Animator:
   m_GameObject: {fileID: 806203700}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f462620e81c7be4f9c392f019bc7c72, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4744,11 +4745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568026105420125747, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: 7568026105420125747, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.13
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: 7568026105420125747, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: m_LocalPosition.z
