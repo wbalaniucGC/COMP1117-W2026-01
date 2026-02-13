@@ -4730,7 +4730,7 @@ MonoBehaviour:
   interactRange: 1.5
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &1075864552
 GameObject:
   m_ObjectHideFlags: 0
@@ -5174,12 +5174,40 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 829224371}
     - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 829224378}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012098542641219628, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6467777224325648363, guid: 57246bbd749fee24096b3ee779b0e425, type: 3}
       propertyPath: moveSpeed
