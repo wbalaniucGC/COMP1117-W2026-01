@@ -44,7 +44,7 @@ public class Player : Character
 
     private void FixedUpdate()  // Movement goes here (Move and jump)
     {
-        if(IsDead)
+        if (IsDead)
         {
             return;
         }
